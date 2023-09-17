@@ -22,7 +22,7 @@ form.addEventListener('submit', function (e) {
     }
 
     const user = {
-        cid,
+        did,
         name,
         surname,
         password,
@@ -30,7 +30,7 @@ form.addEventListener('submit', function (e) {
     };
     console.log(user);
 
-    axios.post("http://localhost:3000/users", user);
+    axios.post("https://project2-nat4.onrender.com/users/", user);
 
     form.reset();
 });
@@ -38,9 +38,10 @@ form.addEventListener('submit', function (e) {
 delform.addEventListener('click', function (e) {
     e.preventDefault();
     const did = document.querySelector('.did').value; // Added this line to get the value of 'did' input
-    axios.delete(`http://localhost:3000/users/${did}`);
+    axios.delete(`https://project2-nat4.onrender.com/users/${did}`);
 });
 
 clearbtn.addEventListener('click', function () {
     form.reset();
 });
+
